@@ -11,10 +11,10 @@ const UserSignup = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     setUserData({
-      username:{
+      fullName: {
         firstName: firstName,
         lastName: lastName
-      },   
+      },
       email: email,
       password: password
     })
@@ -33,7 +33,7 @@ const UserSignup = () => {
           submitHandler(e)
         }
         }>
-          <h3 className='text-lg mb-2 font-semibold'>What's your email?</h3>
+          <h3 className='text-lg mb-2 font-semibold'>What's your name?</h3>
           <div className='flex justify-evenly gap-3'>
             <input
               value={firstName}
@@ -73,7 +73,8 @@ const UserSignup = () => {
         </form>
       </div>
       <div>
-        <p className='text-[10px] text-[#717171] leading-tight mt-20'>By proceeding, you consent to get calls, WhatsApp or SMS messages, including by automated means, from Uber and its affiliates to the number provided.</p>
+        <p className='text-[10px] text-[#717171] leading-tight mt-24'>This site is protected by reCAPTCHA and the <span className='underline'>Google
+        Policy</span> and <span className='underline'>Terms of Service apply</span> .</p>
       </div>
     </div>
   )

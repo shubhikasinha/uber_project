@@ -26,7 +26,7 @@ const CaptainLogin = () => {
                 }
                 }>
                     <h3
-                        className='text-lg mb-2 font-semibold'>What's your email?</h3>
+                        className='text-lg mb-2 font-semibold'>Captain's email?</h3>
                     <input
                         required
                         value={email}
