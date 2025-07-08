@@ -22,9 +22,11 @@ const CaptainContext = ({ children }) => {
     };
 
     return (
-        <CaptainDataContext.Provider value={value}>
-            {children}
-        </CaptainDataContext.Provider>
+        
+            <CaptainDataContext.Provider value={value}>
+                {children}
+            </CaptainDataContext.Provider>
+        
     );
 };
 

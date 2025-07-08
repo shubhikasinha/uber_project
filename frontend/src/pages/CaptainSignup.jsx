@@ -33,7 +33,7 @@ const CaptainSignup = () => {
         vehicle: {
           color: vehicleColor,
           plate: vehiclePlate,
-          capacity: vehicleCapacity,
+          capacity: Number(vehicleCapacity),
           vehicleType: vehicleType
         }
       }
@@ -60,6 +60,9 @@ const CaptainSignup = () => {
       }
     } catch (error) {
       console.error('Signup error:', error.response?.data || error.message)
+      if (error.response?.data?.errors) {
+        error.response.data.errors.forEach(e => console.error(e.msg || e.message || e))
+      }
     }
 
     setFirstName('');
@@ -154,7 +157,7 @@ const CaptainSignup = () => {
               <option value="" disabled className="text-gray-400">vehicle type</option>
               <option className="text-black" value="car">Car</option>
               <option className="text-black" value="auto">Auto</option>
-              <option className="text-black" value="moto">Moto</option>
+              <option className="text-black" value="motorcycle">Motorcycle</option>
             </select>
           </div>
           <button to='/login' className='w-full bg-black text-white py-3 font-semibold rounded-lg mt-6'>Create Account</button>

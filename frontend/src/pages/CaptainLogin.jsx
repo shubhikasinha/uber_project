@@ -7,7 +7,7 @@ import { CaptainDataContext } from '../context/CaptainContext'
 const CaptainLogin = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [captainData, setCaptain] = React.useContext(CaptainDataContext)
+    const { captain, setCaptain } = React.useContext(CaptainDataContext)
     const navigate = useNavigate()
 
     const submitHandler = async (e) => {
@@ -16,15 +16,14 @@ const CaptainLogin = () => {
             email: email,
             password: password
         }
-        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/captain/login`, captain)
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/captain/login`, captain)
 
         if(response.status === 200){
-            const token = response.data
-
+            const data = response.data
             setCaptain(data.captain)
+            const token = data.token
             localStorage.setItem('token', token)
             navigate('/captain-home')
-            
         }
         else{
             console.log('Invalid email or password')
