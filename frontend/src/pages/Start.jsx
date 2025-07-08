@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-
-const Home = () => {
+const Start = () => {
     return (
         <div className='h-screen w-full flex justify-between flex-col bg-[url("/images/home.png")] bg-cover bg-center'>
             <img className="w-16 ml-8 mt-5" src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png" alt='logo'></img>
@@ -14,4 +13,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Start
